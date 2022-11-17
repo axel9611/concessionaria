@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{listaClienti/}">
+    <button style="text-color:#FF0">Clienti</button>
+</a>
+
+<a th:href="@{aggiungiAuto/}">
+    <button style="text-color:#FF0">Aggiungi una nuova auto</button>
+</a>
+
+<ul>
+
+  <li th:each="a : ${auto}" >
+      <span><p th:text="${a.modello}" ></p>
+          <a th:href="@{/auto/visualizzaAuto/}+${a.id}">
+        <button>
+            Visualizza</button></a>
+      <a th:href="@{/auto/modificaAuto/}+${a.id}">
+        <button>
+            Modifica</button></a>
+      </span>
+  </li>
+
+</ul>
+
+</body>
+</html>

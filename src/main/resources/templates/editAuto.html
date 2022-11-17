@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Salva Auto</title>
+</head>
+<body>
+
+[[${titolo}]]
+
+<form th:action="@{/auto/} + ${path}" th:object="${auto}" method="post">
+
+<span>
+
+<p>Modello Auto</p></label>
+  <input id="nome" content="text" th:field="*{modello}" placeholder="Modello Auto" th:text="${auto.modello}">
+</span>
+
+  <input type="submit" value="Invia">
+</form>
+
+
+</body>
+</html>
